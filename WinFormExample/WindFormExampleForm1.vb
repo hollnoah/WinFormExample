@@ -22,7 +22,8 @@ Public Class WindFormExampleForm1
     End Sub
     Sub SetCase()
         If UpperRadioButton.Checked = True Then
-            Me.Text = UCase(FirstTextBox.Text & " " & LastTextBox.Text)
+            FirstTextBox.Text = UCase(FirstTextBox.Text)
+            LastTextBox.Text = UCase(LastTextBox.Text)
         ElseIf LowerRadioButton.Checked = True Then
             Me.Text = LCase(FirstTextBox.Text & " " & LastTextBox.Text)
         Else
@@ -38,6 +39,7 @@ Public Class WindFormExampleForm1
         ' Me.Text = StrReverse(Me.Text)
         'Me.Text = "Racecar"
         SetCase()
+        SetFormat()
         SetDefaults()
     End Sub
 
