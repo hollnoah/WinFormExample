@@ -30,16 +30,21 @@ Public Class WindFormExampleForm1
             MsgBox($"Oh No! No Case Selected!")
         End If
     End Sub
+
+    Sub Reverse()
+        If ReverseCheckBox.Checked Then
+            Me.Text = StrReverse(Me.Text)
+        End If
+    End Sub
     'Event Handlers ************************************************************************
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
     End Sub
 
     Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
-        ' Me.Text = StrReverse(Me.Text)
-        'Me.Text = "Racecar"
         SetCase()
         SetFormat()
+        Reverse()
         SetDefaults()
     End Sub
 
