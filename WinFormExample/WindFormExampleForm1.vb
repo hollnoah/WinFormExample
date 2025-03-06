@@ -2,6 +2,9 @@
 Option Strict On
 Option Explicit On
 Option Compare Text
+
+'tool tips
+'accept & cancel buttons
 Public Class WindFormExampleForm1
     Sub SetDefaults()
         FirstTextBox.Text = ""
@@ -77,6 +80,31 @@ Public Class WindFormExampleForm1
         Return True
     End Function
 
+    Sub Scramble()
+        Dim temp As String = FirstTextBox.Text
+        Dim letters(Len(FirstTextBox.Text)) As String
+
+        For i = 0 To UBound(letters)
+            letters(i) = FirstTextBox.Text
+        Next
+
+
+        If RandomCheckBox.Checked Then
+
+            Console.WriteLine($"The third letter is: {temp(2)}")
+            For i = 0 To Len(temp) - 1
+                Console.WriteLine($"Letter {i + 1} is: {temp(i)}")
+
+            Next
+        End If
+
+        'For Each thingy In temp
+        '    Randomize()
+
+        'Next
+
+    End Sub
+
     'Event Handlers ************************************************************************
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
@@ -84,6 +112,7 @@ Public Class WindFormExampleForm1
 
     Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
         If UserInputIsValid() Then
+            Scramble()
             SetCase()
             SetFormat()
             ReverseString()
