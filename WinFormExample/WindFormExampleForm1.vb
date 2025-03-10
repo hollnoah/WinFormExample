@@ -105,6 +105,10 @@ Public Class WindFormExampleForm1
 
     End Sub
 
+    Sub AddToList(thisString As String)
+        DataListBox1.Items.Add(thisString)
+    End Sub
+
     'Event Handlers ************************************************************************
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
@@ -117,6 +121,7 @@ Public Class WindFormExampleForm1
             SetFormat()
             ReverseString()
             RemoveWhiteSpace()
+            AddToList(Me.Text)
             SetDefaults()
         End If
     End Sub
@@ -125,5 +130,7 @@ Public Class WindFormExampleForm1
         SetDefaults()
     End Sub
 
-
+    Private Sub DataListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DataListBox1.SelectedIndexChanged
+        Me.Text = DataListBox1.SelectedIndex.ToString
+    End Sub
 End Class
