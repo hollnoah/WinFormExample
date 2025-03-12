@@ -40,6 +40,8 @@ Partial Class WindFormExampleForm1
         Me.WhiteSpaceCheckBox = New System.Windows.Forms.CheckBox()
         Me.ReverseCheckBox = New System.Windows.Forms.CheckBox()
         Me.DataListBox1 = New System.Windows.Forms.ListBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.CaseGroupBox.SuspendLayout()
         Me.FormatGroupBox.SuspendLayout()
         Me.SuspendLayout()
@@ -230,12 +232,24 @@ Partial Class WindFormExampleForm1
         Me.DataListBox1.Name = "DataListBox1"
         Me.DataListBox1.Size = New System.Drawing.Size(396, 292)
         Me.DataListBox1.TabIndex = 20
+        Me.DataListBox1.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(329, 347)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(149, 92)
+        Me.Button1.TabIndex = 21
+        Me.Button1.Text = "&Remove"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'WindFormExampleForm1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataListBox1)
         Me.Controls.Add(Me.ReverseCheckBox)
         Me.Controls.Add(Me.WhiteSpaceCheckBox)
@@ -280,4 +294,6 @@ Partial Class WindFormExampleForm1
     Friend WithEvents WhiteSpaceCheckBox As CheckBox
     Friend WithEvents ReverseCheckBox As CheckBox
     Friend WithEvents DataListBox1 As ListBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class
