@@ -42,6 +42,7 @@ Partial Class WindFormExampleForm1
         Me.DataListBox1 = New System.Windows.Forms.ListBox()
         Me.RemoveButton = New System.Windows.Forms.Button()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.DataComboBox = New System.Windows.Forms.ComboBox()
         Me.CaseGroupBox.SuspendLayout()
         Me.FormatGroupBox.SuspendLayout()
         Me.SuspendLayout()
@@ -228,7 +229,7 @@ Partial Class WindFormExampleForm1
         '
         Me.DataListBox1.FormattingEnabled = True
         Me.DataListBox1.ItemHeight = 16
-        Me.DataListBox1.Location = New System.Drawing.Point(392, 30)
+        Me.DataListBox1.Location = New System.Drawing.Point(392, 49)
         Me.DataListBox1.Name = "DataListBox1"
         Me.DataListBox1.Size = New System.Drawing.Size(396, 292)
         Me.DataListBox1.TabIndex = 20
@@ -244,11 +245,20 @@ Partial Class WindFormExampleForm1
         Me.RemoveButton.Text = "&Remove"
         Me.RemoveButton.UseVisualStyleBackColor = True
         '
+        'DataComboBox
+        '
+        Me.DataComboBox.FormattingEnabled = True
+        Me.DataComboBox.Location = New System.Drawing.Point(392, 19)
+        Me.DataComboBox.Name = "DataComboBox"
+        Me.DataComboBox.Size = New System.Drawing.Size(396, 24)
+        Me.DataComboBox.TabIndex = 23
+        '
         'WindFormExampleForm1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.DataComboBox)
         Me.Controls.Add(Me.RemoveButton)
         Me.Controls.Add(Me.DataListBox1)
         Me.Controls.Add(Me.ReverseCheckBox)
@@ -296,4 +306,5 @@ Partial Class WindFormExampleForm1
     Friend WithEvents DataListBox1 As ListBox
     Friend WithEvents RemoveButton As Button
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents DataComboBox As ComboBox
 End Class

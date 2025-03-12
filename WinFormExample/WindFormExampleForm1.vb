@@ -108,6 +108,7 @@ Public Class WindFormExampleForm1
 
     Sub AddToList(thisString As String)
         DataListBox1.Items.Add(thisString)
+        DataComboBox.Items.Add(thisString)
     End Sub
 
     'Event Handlers ************************************************************************
@@ -143,5 +144,9 @@ Public Class WindFormExampleForm1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles RemoveButton.Click
         ' Console.WriteLine($"The item at index {DataListBox1.SelectedIndex} is {DataListBox1.SelectedItem}!")
         DataListBox1.Items.RemoveAt(DataListBox1.SelectedIndex)
+    End Sub
+
+    Private Sub DataComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DataComboBox.SelectedIndexChanged
+        Me.Text = DataComboBox.SelectedIndex.ToString
     End Sub
 End Class
