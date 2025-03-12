@@ -16,6 +16,7 @@ Public Class WindFormExampleForm1
         WhiteSpaceCheckBox.Checked = False
         RandomCheckBox.Checked = False
         FirstTextBox.Focus() 'sets cursor priority to first text box
+        RemoveButton.enabled = False
 
     End Sub
 
@@ -132,5 +133,15 @@ Public Class WindFormExampleForm1
 
     Private Sub DataListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DataListBox1.SelectedIndexChanged
         Me.Text = DataListBox1.SelectedIndex.ToString
+        If DataListBox1.SelectedIndex = -1 Then
+            RemoveButton.Enabled = False
+        Else
+            RemoveButton.Enabled = True
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles RemoveButton.Click
+        ' Console.WriteLine($"The item at index {DataListBox1.SelectedIndex} is {DataListBox1.SelectedItem}!")
+        DataListBox1.Items.RemoveAt(DataListBox1.SelectedIndex)
     End Sub
 End Class
